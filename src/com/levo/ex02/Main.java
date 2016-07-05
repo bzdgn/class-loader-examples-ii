@@ -1,8 +1,10 @@
-package com.levo.ex01;
+package com.levo.ex02;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+
+import com.levo.ex02.interfaces.IQuote;
 
 public class Main {
 
@@ -13,11 +15,11 @@ public class Main {
 		URL url;
 		
 		try {
-			url = new URL("file:///" + workingDirectory + "\\lib1\\quoter.jar");
-			URLClassLoader ucl = new URLClassLoader(new URL[]{url});	//can obtain multiple URL's inside a list
-			Class clazz = ucl.loadClass("com.levo.Quote");				// Load class
-			Object o = clazz.newInstance();								// Instantiate the class object
-			System.out.println(o.toString());							// Print toString() of the class
+			url = new URL("file:///" + workingDirectory + "\\lib2\\Implementations.jar");
+			URLClassLoader ucl = new URLClassLoader(new URL[]{url});				//can obtain multiple URL's inside a list
+			Class clazz = ucl.loadClass("com.levo.ex02.implementations.Quote");		// Load class
+			IQuote o = (IQuote) clazz.newInstance();								// Instantiate the class object
+			System.out.println(o.getQuote());										// Print toString() of the class
 		} catch(MalformedURLException e) {		// URL Exception
 			e.printStackTrace();
 		} catch(ClassNotFoundException e) {		// Class Not Found Exception

@@ -15,6 +15,8 @@ public class Main {
 		URL url;
 		
 		try {
+			// Note: you can rename Quote.java to make sure that program retrieves
+			//       binary from the jar file located on lib dir
 			url = new URL("file:///" + workingDirectory + "\\lib2\\Implementations.jar");
 			URLClassLoader ucl = new URLClassLoader(new URL[]{url});				//can obtain multiple URL's inside a list
 			Class clazz = ucl.loadClass("com.levo.ex02.implementations.Quote");		// Load class

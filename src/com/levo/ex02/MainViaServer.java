@@ -15,6 +15,8 @@ public class MainViaServer {
 		URL url;
 		
 		try {
+			// Note: you can rename Quote.java to make sure that program retrieves
+			//       binary from the server
 //			url = new URL("file:///" + workingDirectory + "\\lib2\\Implementations.jar");	// Use server instead;
 			url = new URL("https://github.com/bzdgn/class-loader-examples-ii/blob/master/lib2/Implementations.jar?raw=true");
 			URLClassLoader ucl = new URLClassLoader(new URL[]{url});				//can obtain multiple URL's inside a list

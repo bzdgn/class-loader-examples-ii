@@ -1,4 +1,4 @@
-package com.levo.ex03;
+package com.levo.ex03_load_from_db;
 
 import java.io.IOException;
 import java.nio.file.Files;

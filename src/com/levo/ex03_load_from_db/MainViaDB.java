@@ -1,4 +1,4 @@
-package com.levo.ex03;
+package com.levo.ex03_load_from_db;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,7 +12,7 @@ public class MainViaDB {
 		try {
 			DerbyServerClassLoader cl = new DerbyServerClassLoader("jdbc:derby://localhost:1527/memory:levoDB/class-loader-demo;create=true");
 			
-			Class clazz = cl.findClass("com.levo.ex02.implementations.Quote");		// Load class
+			Class clazz = cl.findClass("com.levo.ex02.implementations.Quotes");		// Load class
 			IQuote o = (IQuote) clazz.newInstance();								// Instantiate the class object
 			System.out.println(o.getQuote());										// Print toString() of the class
 		} catch(ClassNotFoundException e) {		// Class Not Found Exception

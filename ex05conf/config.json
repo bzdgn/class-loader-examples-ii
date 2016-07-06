@@ -1,0 +1,4 @@
+{
+	"factoryType": "com.levo.ex05_factories.implementations.CanonCameraFactory",
+	"location": "file:///D://MainEclipse//tezgah//class-loader-examples-ii//cameraLib//CameraLib.jar"
+}

@@ -1,6 +1,6 @@
 package com.levo.ex05_factories;
 
-import com.levo.ex05_factories.implementations.X.NikonCameraFactory;
+import com.levo.ex05_factories.implementations.NikonCameraFactory;
 import com.levo.ex05_factories.interfaces.ICamera;
 import com.levo.ex05_factories.interfaces.ICameraFactory;
 

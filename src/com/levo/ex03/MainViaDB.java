@@ -10,7 +10,7 @@ public class MainViaDB {
 
 	public static void main(String[] args) {
 		try {
-			DerbyServerClassLoader cl = new DerbyServerClassLoader("jdbc:derby://localhost:1527/memory:levoDB/singletonDemo;create=true");
+			DerbyServerClassLoader cl = new DerbyServerClassLoader("jdbc:derby://localhost:1527/memory:levoDB/class-loader-demo;create=true");
 			
 			Class clazz = cl.findClass("com.levo.ex02.implementations.Quote");		// Load class
 			IQuote o = (IQuote) clazz.newInstance();								// Instantiate the class object

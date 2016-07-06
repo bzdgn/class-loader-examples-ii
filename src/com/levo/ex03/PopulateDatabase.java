@@ -19,7 +19,7 @@ public class PopulateDatabase {
 		conn = DriverManager.getConnection(dbUrl);
 		
 		
-//		createTable(conn, stmt);
+		createTable(conn);
 		createEntry(conn);
 		
 		conn.close();
@@ -32,12 +32,13 @@ public class PopulateDatabase {
 		PreparedStatement pstmt = conn.prepareStatement(insertTable);
 		
 		String workingDirectory = System.getProperty("user.dir");
-		String pathString = workingDirectory + "\\lib2\\Implementations.jar";
+		String pathString = workingDirectory + "\\lib2\\Quote.class";
 		System.out.println(pathString);
 		
 		Path path = Paths.get(pathString);
 		byte[] fileBytes = Files.readAllBytes(path);
-		Blob fileBlob = new javax.sql.rowset.serial.SerialBlob(fileBytes);
+		Blob fileBlob = conn.createBlob();
+		fileBlob.setBytes(1, fileBytes);
 		
 		pstmt.setString(1, "com.levo.ex02.implementations.Quote");
 		pstmt.setBlob(2, fileBlob);

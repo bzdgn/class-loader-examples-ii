@@ -1,5 +1,9 @@
 package com.levo.ex03;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,7 +41,8 @@ public class DerbyServerClassLoader extends ClassLoader {
 				throw new ClassNotFoundException("Unable to load class from Database", sqle);
 			}
 			
-			return defineClass(name, bytes, 0, bytes.length);
+			if(bytes != null)
+				return defineClass(name, bytes, 0, bytes.length);
 		}
 		
 		return super.findClass(name);
